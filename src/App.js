@@ -1,8 +1,10 @@
 /*dependencies*/
-/*components*/
 import React from 'react';
-import './App.css';
 
+/*components*/
+
+import './App.css';
+import MonsterList from './components/monsters/MonsterList';
 
 
 function App() {

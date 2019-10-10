@@ -69,6 +69,10 @@ when/if I finish that goal, I will adjust styling to match the theme of my proje
 ## Steps:
 
     
-- [ ] build file structure
-- [ ]
-- [ ]
+- [x] build file structure
+- [x] create store
+        - reducer
+        -redux-thunk
+- [ ] connect api
+- [ ] create async action creator
+- [ ] handle UI states

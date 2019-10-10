@@ -1,4 +1,6 @@
 /*dependencies*/
+import React from 'react';
+import { connect } from 'react-redux';
 /*components*/
 
 //shape of data I want on this card: 
@@ -11,3 +13,22 @@
 "hit_points": 105,
             
 */
+
+const MonsterCard = props => {
+    return(
+    <div>
+        this will hold my card data
+    </div>
+    )
+}
+
+const mapStateToProps = state => {
+    return {
+        Monster:{
+            n
+        }
+    }
+}
+
+export default connect(mapStateToProps,{})(MonsterCard)
+

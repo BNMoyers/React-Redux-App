@@ -1,7 +1,6 @@
 /*dependencies*/
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 
 /*components*/
@@ -17,7 +16,16 @@ const MonsterList = props => {
     
     if(props.isFetching){
         //spinner
-        return <h2> loading state </h2>
+        return(
+            <div class="ui segment">
+  <div class="ui active inverted dimmer">
+    <div class="ui mini text loader">Fetching Monsters...</div>
+  </div>
+  <p></p>
+  <p></p>
+  <p></p>
+</div>
+        )
     }
     return (
         <section className='caracter-list grid-view'>

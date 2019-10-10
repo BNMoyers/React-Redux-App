@@ -1,6 +1,7 @@
 /*dependencies*/
 import React from 'react';
 import { connect } from 'react-redux';
+import { Cards } from 'semantic-ui-react';
 /*components*/
 
 //shape of data I want on this card: 
@@ -17,8 +18,21 @@ import { connect } from 'react-redux';
 const MonsterCard = ({ monster }) => {
     console.log('card props', monster)
     return(
-    <div>
-        {monster.name}
+    <div className='ui card'>
+        <div clasName='content'>
+            <h2 className='header'>{monster.name}</h2>
+            <div className='meta'>
+                <span className='date'>CR: {monster.challenge_rating}</span>
+                <span className='date'>Size: {monster.size}</span>
+                <span className='date'>HP: {monster.hit_points}</span>
+
+            </div>
+        </div>
+        <div className='extra content'>
+                            <div>Alignment: {monster.alignment}</div>
+                            <div>Source: {monster.document__title}</div>
+
+</div>
     </div>
     )
 }

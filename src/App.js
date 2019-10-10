@@ -6,7 +6,6 @@ import React from 'react';
 import Header from './components/Header';
 import NavTabs from './components/Nav';
 import AppRouter from './components/AppRouter'
-import MonsterList from './components/monsters/MonsterList';
 
 
 function App() {

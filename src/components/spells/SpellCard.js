@@ -1,6 +1,6 @@
-/*dependencies*/
-/*components*/
-
+import React from 'react';
+import { connect } from 'react-redux';
+import { Cards } from 'semantic-ui-react';
 //shape of data I want on this card: 
 
 /* 
@@ -20,3 +20,26 @@
             "school": "Evocation",
             "dnd_class": "Druid, Wizard",
 */
+
+const SpellCard = ({ spell }) => {
+    return(
+        <div className='ui card'>
+       <div className='content'>
+           <h2 className='header'>{spell.name}</h2>
+           <div className='meta'>
+               <span className='date'>{spell.level}</span>
+               <span className='date'>can cast: {spell.dnd_class}</span>
+                <br/>
+               <span className='date'>source page: {spell.page}</span>
+
+
+           </div>
+           <div className='description'>
+               <div>{spell.desc}</div>
+           </div>
+       </div>
+       </div> 
+    )
+}
+
+export default SpellCard

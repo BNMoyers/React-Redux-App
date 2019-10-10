@@ -25,12 +25,12 @@ export const fetchItems = () => dispatch => {
     .catch(err => dispatch({ type: FETCH_FAILURE, payload: err }))
  }
 
-// export const fetchItems = () => dispatch => {
-//     dispatch({ type: START_FETCHING });
+export const fetchSpells = () => dispatch => {
+    dispatch({ type: START_FETCHING });
 
-//     axios.get( "https://api.open5e.com/monsters/?armor_class=&challenge_rating=&document=&document__slug=&name=&type=undead")
-//     .then(res => dispatch({type: FETCH_SUCCESS, payload: res.data.results}))
-//     .catch(err => dispatch({ type: FETCH_FAILURE, payload: err }))
-//  }
+    axios.get( "https://api.open5e.com/spells/?level=&level_int=&school=Necromancy")
+    .then(res => dispatch({type: FETCH_SUCCESS_SPELLS, payload: res.data.results}))
+    .catch(err => dispatch({ type: FETCH_FAILURE, payload: err }))
+ }
 
 

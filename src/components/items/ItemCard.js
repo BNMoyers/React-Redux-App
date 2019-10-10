@@ -16,7 +16,19 @@ import { Cards } from 'semantic-ui-react';
 
 const ItemCard = ({ item }) => {
     return(
-       <div>{item.name}</div> 
+       <div className='ui card'>
+       <div className='content'>
+           <h2 className='header'>{item.name}</h2>
+           <div className='meta'>
+               <span className='date'>type: {item.type}</span>
+               <span className='date'>rarity: {item.rarity}</span>
+
+           </div>
+           <div className='description'>
+               <div>{item.desc}</div>
+           </div>
+       </div>
+       </div> 
     )
 }
 

@@ -3,16 +3,19 @@ import React from 'react';
 
 /*components*/
 
-import './App.css';
+import Header from './components/Header';
+import NavTabs from './components/Nav';
+import AppRouter from './components/AppRouter'
 import MonsterList from './components/monsters/MonsterList';
 
 
 function App() {
   return (
-    <div className="App">
-      <MonsterList />
-    </div>
-  );
+   <main>
+     <Header />
+     <NavTabs />
+     <AppRouter />
+   </main>)
 }
 
 export default App;

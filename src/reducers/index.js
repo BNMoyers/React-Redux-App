@@ -1,37 +1,56 @@
-import { FETCH_HOUSE_START, FETCH_HOUSE_SUCCESS, FETCH_HOUSE_FAILURE } from '../actions'
+import { START_FETCHING, FETCH_SUCCESS_MONSTERS, FETCH_SUCCESS_ITEMS, FETCH_SUCCESS_SPELLS, FETCH_FAILURE } from "../actions";
 
 const initialState = {
-    house: null,
-    error: "",
-    loading: false
+  monsters: [],
+  items: [],
+  spells: [],
+  isFetching: false,
+  error: ""
 };
 
-const reducer=(state=initialState, action) => {
-    switch(action.type){
-       case FETCH_HOUSE_START:
-           return{
-               ...state,
-               error: "",
-               loading: true
-           };
-        case FETCH_HOUSE_SUCCESS:
-            return{
-                ...state,
-                error:"",
-                loading: false,
-                house: action.payload
-            };
-        case FETCH_HOUSE_FAILURE:
-            return{
-                ...state,
-                error: action.payload,
-                loading: false,
-                house: null
-            }
-       
-        default: 
-            return state;
-    }
-};
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case START_FETCHING:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      };
 
-export default reducer
+    case FETCH_SUCCESS_MONSTERS:
+      return {
+        ...state,
+        isFetching: false,
+        error: "",
+        monsters: action.payload,
+
+      };
+
+      case FETCH_SUCCESS_ITEMS:
+      return {
+        ...state,
+        isFetching: false,
+        error: "",
+        items: action.payload,
+
+      };
+
+      case FETCH_SUCCESS_SPELLS:
+      return {
+        ...state,
+        isFetching: false,
+        error: "",
+        spells: action.payload,
+
+      };
+    case FETCH_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
+      };
+
+    default:
+      return state;
+  }
+};

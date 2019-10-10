@@ -50,3 +50,29 @@ Once you have chosen an API to consume, build an app that makes sense for the da
 ## Stretch Problems
 
 Take the app as far as you can go! Styling, redux hooks, another API, an input to fetch data dynamically, etc. Work on it, improve it until the end of the day. If you find yourself finishing with time left to spare, jump on with your TL or fellow student to ask them what feature they think you should build next. Good luck!
+
+
+## My Plan of Attack
+
+This app will pull a curated selection of monsters, spells, and magic items from an open source 5e API, themed toward Halloween (undead monsters, necromancy spells, and cursed items).
+
+The app will be styled like previous SPA projects we've done - specifically the Rick and Morty API project - which means it will have a landing page and routes to pages that display a list of cards with the data on them. 
+
+As per the requirements, I will also use Redux
+
+All libraries have been installed and the full file structure exists. However, in order to hit MVP for today, I will begin with just the monster list and I will use styling directly from the old project. 
+
+After MVP is achieved, I'll add in routing and other components
+when/if I finish that goal, I will adjust styling to match the theme of my project
+
+
+## Steps:
+
+    
+- [x] build file structure
+- [x] create store
+        - reducer
+        -redux-thunk
+- [ ] connect api
+- [ ] create async action creator
+- [ ] handle UI states

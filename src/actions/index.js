@@ -1,15 +1,36 @@
-import axios from "axios";
+import axios from "axios"
 
-export const FETCH_HOUSE_START= 'FETCH_HOUSE-START';
-export const FETCH_HOUSE_SUCCESS= 'FETCH_HOUSE-SUCCESS'
-export const FETCH_HOUSE_FAILURE= 'FETCH_HOUSE-FAILURE'
+export const START_FETCHING = 'START_FETCHING';
+export const FETCH_SUCCESS_MONSTERS = 'FETCH_SUCCESS_MONSTERS'
+export const FETCH_SUCCESS_ITEMS = 'FETCH_SUCCESS_ITEMS'
+export const FETCH_SUCCESS_SPELLS = 'FETCH_SUCCESS_SPELLS'
 
-export const sortingHat = () => dispatch => {
-        dispatch({ type: FETCH_HOUSE_START });
-        axios.get('https://www.potterapi.com/v1/sortingHat')
-        .then(res =>dispatch({ type: FETCH_HOUSE_SUCCESS, payload: res.data }))
-        .catch(error => dispatch({ type: FETCH_HOUSE_FAILURE, payload: error.response }))
-    };
+export const FETCH_FAILURE = 'FETCH_FAILURE'
 
+
+
+export const fetchMonsters = () => dispatch => {
+    dispatch({ type: START_FETCHING });
+
+    axios.get( "https://api.open5e.com/monsters/?armor_class=&challenge_rating=&document=&document__slug=&name=&type=undead")
+    .then(res => dispatch({type: FETCH_SUCCESS_MONSTERS, payload: res.data.results}))
+    .catch(err => dispatch({ type: FETCH_FAILURE, payload: err }))
+ }
+
+export const fetchItems = () => dispatch => {
+    dispatch({ type: START_FETCHING });
+
+    axios.get( "https://api.open5e.com/magicitems/?ordering=type")
+    .then(res => dispatch({type: FETCH_SUCCESS_ITEMS, payload: res.data.results}))
+    .catch(err => dispatch({ type: FETCH_FAILURE, payload: err }))
+ }
+
+export const fetchSpells = () => dispatch => {
+    dispatch({ type: START_FETCHING });
+
+    axios.get( "https://api.open5e.com/spells/?level=&level_int=&school=Necromancy")
+    .then(res => dispatch({type: FETCH_SUCCESS_SPELLS, payload: res.data.results}))
+    .catch(err => dispatch({ type: FETCH_FAILURE, payload: err }))
+ }
 
 

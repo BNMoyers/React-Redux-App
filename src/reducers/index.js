@@ -1,37 +1,10 @@
-import { FETCH_HOUSE_START, FETCH_HOUSE_SUCCESS, FETCH_HOUSE_FAILURE } from '../actions'
+//this may get complex...but we can do it! Switch statements rock and so do I
 
-const initialState = {
-    house: null,
-    error: "",
-    loading: false
-};
+export const reducer = () => {
+    return (
+        {
+            text: 'this is a placeholder reducer'
+        }
+    )
+}
 
-const reducer=(state=initialState, action) => {
-    switch(action.type){
-       case FETCH_HOUSE_START:
-           return{
-               ...state,
-               error: "",
-               loading: true
-           };
-        case FETCH_HOUSE_SUCCESS:
-            return{
-                ...state,
-                error:"",
-                loading: false,
-                house: action.payload
-            };
-        case FETCH_HOUSE_FAILURE:
-            return{
-                ...state,
-                error: action.payload,
-                loading: false,
-                house: null
-            }
-       
-        default: 
-            return state;
-    }
-};
-
-export default reducer

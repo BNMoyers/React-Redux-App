@@ -1,17 +1,16 @@
+/*dependencies*/
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+
+/*components*/
 import './index.css';
 import App from './App';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import reducer from './reducers';
-import thunk from 'redux-thunk';
+import { reducer } from './reducers';
 
-const store = createStore(reducer, applyMiddleware(thunk)); 
+/*store*/
+const store = createStore(reducer);
 
-ReactDOM.render(
-<Provider store={store}>
-    <App />
-</Provider>
-, document.getElementById('root'));
+
+ReactDOM.render(<App store={store}/>, document.getElementById('root'));
 

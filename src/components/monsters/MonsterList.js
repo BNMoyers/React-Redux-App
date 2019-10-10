@@ -1,7 +1,8 @@
 /*dependencies*/
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
+import { Grid } from 'semantic-ui-react';
 
 /*components*/
 import MonsterCard from './MonsterCard';
@@ -19,12 +20,15 @@ const MonsterList = props => {
         return <h2> loading state </h2>
     }
     return (
-        <div>
+        <section className='caracter-list grid-view'>
+            <Grid centered columns={3}>
             {props.error && <p>{props.error}</p>}
             {props.monsters.map(monster => (
+            <Grid.Column width={5}>
                 <MonsterCard key={monster.name} monster={monster} />
-            ))}
-        </div>
+            </Grid.Column>
+            ))}</Grid>
+        </section>
     );
       
 } 

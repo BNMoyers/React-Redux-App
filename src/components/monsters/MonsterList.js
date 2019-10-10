@@ -21,14 +21,12 @@ const MonsterList = props => {
   <div class="ui active inverted dimmer">
     <div class="ui mini text loader">Fetching Monsters...</div>
   </div>
-  <p></p>
-  <p></p>
-  <p></p>
+
 </div>
         )
     }
     return (
-        <section className='caracter-list grid-view'>
+        <section className='character-list grid-view'>
             <Grid centered columns={3}>
             {props.error && <p>{props.error}</p>}
             {props.monsters.map(monster => (

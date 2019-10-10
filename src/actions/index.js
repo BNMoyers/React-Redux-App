@@ -20,7 +20,7 @@ export const fetchMonsters = () => dispatch => {
 export const fetchItems = () => dispatch => {
     dispatch({ type: START_FETCHING });
 
-    axios.get( "https://api.open5e.com//magicitems/")
+    axios.get( "https://api.open5e.com/magicitems/?ordering=type")
     .then(res => dispatch({type: FETCH_SUCCESS_ITEMS, payload: res.data.results}))
     .catch(err => dispatch({ type: FETCH_FAILURE, payload: err }))
  }

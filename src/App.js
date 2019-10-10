@@ -10,6 +10,7 @@ import MonsterList from './components/monsters/MonsterList';
 function App() {
   return (
     <div className="App">
+      <MonsterList />
     </div>
   );
 }

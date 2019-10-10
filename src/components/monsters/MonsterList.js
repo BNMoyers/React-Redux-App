@@ -1,33 +1,40 @@
 /*dependencies*/
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 
 /*components*/
 import MonsterCard from './MonsterCard';
-import { fetchMonster } from '../..actions'
+import { fetchMonsters } from '../../actions';
+
 const MonsterList = props => {
-    return(
-    <>
-        if(props.isFetching){
+   console.log(props)
+    useEffect(() =>{
+       props.fetchMonsters();
+   },[]);
+    
+    
+    if(props.isFetching){
         //spinner
-        return <h2> loading state </h2
+        return <h2> loading state </h2>
     }
     return (
         <div>
             {props.error && <p>{props.error}</p>}
-            {props.monsters.map(monster => <MonsterCard monster={monster}/>)}
+            {props.monsters.map(monster => (
+                <MonsterCard key={monster.name} monster={monster} />
+            ))}
         </div>
-    )
-    </>
-    )
+    );
+      
 } 
 const mapStateToProps = state => {
+   console.log(state, 'state')
     return {
-        MonsterList: state.monsters,
+        monsters: state.monsters,
         isFetching: state.isFetching,
         error: state.error
     }
 }
 
-export default connect(mapStateToProps,{})(MonsterList)
+export default connect(mapStateToProps,{ fetchMonsters })(MonsterList)

@@ -5,10 +5,10 @@ const initialState = {
   items: [],
   spells: [],
   isFetching: false,
-  error: "this is an error message"
+  error: ""
 };
 
-export const rootReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case START_FETCHING:
       return {
@@ -22,7 +22,7 @@ export const rootReducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         error: "",
-        monsters: action.Payload
+        monsters: action.payload
       };
     case FETCH_FAILURE:
       return {

@@ -14,21 +14,16 @@ import { connect } from 'react-redux';
             
 */
 
-const MonsterCard = props => {
+const MonsterCard = ({ monster }) => {
+    console.log('card props', monster)
     return(
     <div>
-        this will hold my card data
+        {monster.name}
     </div>
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        Monster:{
-            n
-        }
-    }
-}
 
-export default connect(mapStateToProps,{})(MonsterCard)
+
+export default MonsterCard
 

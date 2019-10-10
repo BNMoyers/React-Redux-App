@@ -1,3 +1,5 @@
+/*dependencies*/
+/*components*/
 import React from 'react';
 import './App.css';
 
